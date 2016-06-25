@@ -28,6 +28,8 @@ node_modules
 .c9
 .git
 
+modules/configurations.js
+
 # Optional npm cache directory
 .npm
 

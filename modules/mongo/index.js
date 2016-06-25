@@ -5,9 +5,9 @@ mongoose.connect(
     `${configurations.database.connectionString}`);
 
 const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
+db.on('error', console.error.bind(console, 'Connection error:'));
 db.once('open', () => {
-    console.log('connection was created');
+    console.log('Connection was created');
 });
 
 module.exports.user = user;

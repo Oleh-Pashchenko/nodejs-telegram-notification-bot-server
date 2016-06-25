@@ -1,6 +1,6 @@
 module.exports = {
     telegram: {
-        token: '202855970:AAGdK-DEzBKkAagF-Gl_QETcTfzB3a7tSEg',
+        token: '192960484:AAGbKCTcFx8rtngx3bkjAAYL0EcS6f8YoQA',
         options: {
             polling: true
         }
@@ -11,6 +11,7 @@ module.exports = {
         password: 'the-wall-db2000'
     },
     text: {
-        app_key_text: 'Your app key:\n'
+        app_key_text: 'Your app key:\n',
+        already_subscribed: 'You are already signed up for notifications'
     }
 };

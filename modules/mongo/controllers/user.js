@@ -9,7 +9,6 @@ module.exports = mongoose => {
                     if (error) {
                         reject(error);
                     }
-
                     resolve(user);
                 });
             });
@@ -19,9 +18,11 @@ module.exports = mongoose => {
                 var newUser = user({
                     telegramId: telegramId
                 });
-
                 newUser.save((error, document) => {
-                    if (error != undefined && error.code != 11000) {
+                    if (error != undefined) {
+                        if (error.code == 11000) {
+                            resolve(true);
+                        }
                         reject(error);
                     }
                     if (undefined != document) {

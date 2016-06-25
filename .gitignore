@@ -29,6 +29,8 @@ node_modules
 .git
 modules/configurations.js
 
+# modules/configurations.js
+
 # Optional npm cache directory
 .npm
 

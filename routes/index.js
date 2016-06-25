@@ -1,5 +1,5 @@
-module.exports = function(app) {
-        app.post('/message', function(request, response) {
+module.exports = app => {
+        app.post('/message', (request, response) => {
         response.end();
     });
 };

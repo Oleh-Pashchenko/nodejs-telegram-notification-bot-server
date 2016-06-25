@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const configurations = require('../configurations.js');
 const user = require('./controllers/user.js')(mongoose);
 mongoose.connect(
-    `${configurations.database.connectionString}${configurations.database.user}${configurations.database.password}`);
+    `${configurations.database.connectionString}`);
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));

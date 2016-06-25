@@ -1,11 +1,11 @@
 module.exports = mongoose => {
-    let user = require('../models/user')(mongoose);
+    var user = require('../models/user')(mongoose);
     return {
         Get: id => {
-            return new Promise(function(resolve, reject) {
+            return new Promise((resolve, reject) => {
                 user.findOne({
                     _id: id
-                }, function(error, user) {
+                }, (error, user) => {
                     if (error) {
                         reject(error);
                     }
@@ -15,16 +15,18 @@ module.exports = mongoose => {
             });
         },
         Set: telegramId => {
-            return new Promise(function(resolve, reject) {
-                var user = user({
+            return new Promise((resolve, reject) => {
+                var newUser = user({
                     telegramId: telegramId
                 });
 
-                user.save(function(error, document) {
+                newUser.save((error, document) => {
                     if (error != undefined && error.code != 11000) {
                         reject(error);
                     }
-                    resolve(document);
+                    if (undefined != document) {
+                        resolve(document.id);
+                    }
                 });
             });
         }

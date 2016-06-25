@@ -1,5 +1,5 @@
 module.exports = mongoose => {
-    let userSchema = mongoose.Schema({
+    var userSchema = mongoose.Schema({
         telegramId: {
             type: String,
             unique: true

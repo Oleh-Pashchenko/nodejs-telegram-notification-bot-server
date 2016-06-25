@@ -1,0 +1,25 @@
+{
+  "name": "nodejs-telegram-notification-bot-server",
+  "version": "1.0.0",
+  "description": "Bot server of telegram notification from back-end",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oleh-Pashchenko/nodejs-telegram-notification-bot-server.git"
+  },
+  "author": "Oleh Pashchenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Oleh-Pashchenko/nodejs-telegram-notification-bot-server/issues"
+  },
+  "homepage": "https://github.com/Oleh-Pashchenko/nodejs-telegram-notification-bot-server#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.5.2",
+    "node-telegram-bot-api": "^0.23.3"
+  }
+}

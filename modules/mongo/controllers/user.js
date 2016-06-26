@@ -1,15 +1,35 @@
 module.exports = mongoose => {
     var user = require('../models/user')(mongoose);
     return {
-        Get: id => {
+        GetById: id => {
             return new Promise((resolve, reject) => {
                 user.findOne({
                     _id: id
-                }, (error, user) => {
+                }, (error, document) => {
                     if (error) {
                         reject(error);
                     }
-                    resolve(user);
+                    if (undefined != document) {
+                        resolve(document);
+                    } else {
+                        reject();
+                    }
+                });
+            });
+        },
+        GetByTelegramId: id => {
+            return new Promise((resolve, reject) => {
+                user.findOne({
+                    telegramId: id
+                }, (error, document) => {
+                    if (error) {
+                        reject(error);
+                    }
+                    if (undefined != document) {
+                        resolve(document);
+                    } else {
+                        resolve(true);
+                    }
                 });
             });
         },

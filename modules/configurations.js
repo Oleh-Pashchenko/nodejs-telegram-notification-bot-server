@@ -12,6 +12,8 @@ module.exports = {
     },
     text: {
         app_key_text: 'Your app key:\n',
-        already_subscribed: 'You are already signed up for notifications'
+        already_subscribed: 'You are already signed up for notifications',
+        welcome : 'Welcome to the BackendNotify.\nUse:\n/token - For generate channel token and subscribe\n/gettoken - For getting your current token',
+        not_subscribed: 'You are not subscribed to the channel.\nUse:\n/token - For generate channel token and subscribe'
     }
 };

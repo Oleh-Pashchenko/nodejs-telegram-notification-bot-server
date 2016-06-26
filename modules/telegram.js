@@ -36,6 +36,6 @@ bot.onText(/\/gettoken/, message => {
 module.exports.send = data => {
     return mongo.GetById(data.token)
         .then(result => {
-            bot.sendMessage(result.telegramId, data.message);
+            bot.sendMessage(result.telegramId, data.message.toString());
         });
 };

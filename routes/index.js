@@ -1,7 +1,7 @@
 module.exports = (app, telegram) => {
     app.post('/message', (request, response) => {
-        if (undefined == request.body && undefined == request.body.data) {
-            if (request.body.data.token == undefined || request.body.message == undefined) {
+        if (undefined != request.body && undefined != request.body.data) {
+            if (request.body.data.token == undefined || request.body.data.message == undefined) {
                 response.status(400);
                 response.json({
                     message: 'Bad request, invalid token or message',

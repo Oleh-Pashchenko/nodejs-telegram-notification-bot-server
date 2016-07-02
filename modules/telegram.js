@@ -1,3 +1,4 @@
+const format = require('string-format');
 const telegramBot = require('node-telegram-bot-api');
 const configurations = require('./configurations.js');
 const mongo = require('./mongo').user;
@@ -16,7 +17,20 @@ bot.onText(/\/token/, message => {
             if (result == true) {
                 bot.sendMessage(chatId, `${configurations.text.already_subscribed}`);
             } else {
-                bot.sendMessage(chatId, `${configurations.text.app_key_text}${result}`);
+                bot.sendMessage(chatId, `${configurations.text.app_key_text}${result}\n${configurations.text.code_information_text}`);
+            }
+        });
+});
+
+bot.onText(/\/code/, message => {
+    var chatId = message.chat.id;
+    mongo.GetByTelegramId(chatId)
+        .then(result => {
+            if (result == true) {
+                bot.sendMessage(chatId, `${configurations.text.not_subscribed}`);
+            } else {
+                bot.sendMessage(chatId, `${configurations.text.install_text}`);
+                bot.sendMessage(chatId, format(`${configurations.text.example_code_text}`, result.id));
             }
         });
 });
